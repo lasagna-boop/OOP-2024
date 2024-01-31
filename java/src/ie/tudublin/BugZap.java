@@ -13,6 +13,9 @@ public class BugZap extends PApplet {
 	}
 	
 	float x = 400;
+	float y = 400; 
+	
+
 
 	public void keyPressed()
 	{
@@ -25,10 +28,17 @@ public class BugZap extends PApplet {
 		if (keyCode == RIGHT)
 		{
 			System.out.println("Right arrow pressed");
+			x += 20 ; 
 		}
-		if (key == ' ')
-		{
-			System.out.println("SPACE key pressed");
+		if (keyCode == UP)
+		{ 
+			System.out.println("U UP");
+			y += -20 ;
+		}
+		if (keyCode == DOWN) 
+		{	
+			System.out.println("U DOWN") ; 
+			y += 20 ; 
 		}
 	}
 
@@ -37,7 +47,7 @@ public class BugZap extends PApplet {
 	public void draw() {
 
 		circle(15, 30, 45);
-		circle (x, 560, 90); 
-	
+		circle (x, y, 90); 
+
 	}
 }
