@@ -10,44 +10,52 @@ public class BugZap extends PApplet {
 	public void setup() {
 		colorMode (RGB); 
 		background(0);
+
+		
+	float r = random(500);
+	rect (r, r, 50, 100);
+
+
 	}
 	
-	float x = 400;
-	float y = 400; 
-	
-
+	float playerX = 400;
+	float playerY = 400; 
 
 	public void keyPressed()
 	{
 		if (keyCode == LEFT)
 		{
 			System.out.println("Left arrow pressed");
-			x += -20;
+			playerX += -20;
 			
 		}
 		if (keyCode == RIGHT)
 		{
 			System.out.println("Right arrow pressed");
-			x += 20 ; 
+			playerX += 20 ; 
 		}
 		if (keyCode == UP)
 		{ 
 			System.out.println("U UP");
-			y += -20 ;
+			playerY += -20 ;
 		}
 		if (keyCode == DOWN) 
 		{	
 			System.out.println("U DOWN") ; 
-			y += 20 ; 
+			playerY += 20 ; 
 		}
 	}
 
 	int gameMode = 0;
 
-	public void draw() {
 
-		circle(15, 30, 45);
-		circle (x, y, 90); 
+	public void draw() {
+	rect(playerX, playerY, 90, 90); 
+
+
+	stroke(1, 0, 255);
+	circle(500, 450 , 50) ; 
+
 
 	}
 }
