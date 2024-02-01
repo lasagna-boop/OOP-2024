@@ -4,18 +4,12 @@ import processing.core.PApplet;
 
 public class BugZap extends PApplet {
 	public void settings() {
-		size(1000, 1000);
+		size(800, 800);
 	}
 
 	public void setup() {
 		colorMode (RGB); 
 		background(0);
-
-		
-	float r = random(500);
-	rect (r, r, 50, 100);
-
-
 	}
 	
 	float playerX = 400;
@@ -48,14 +42,28 @@ public class BugZap extends PApplet {
 
 	int gameMode = 0;
 
+	//separate function for player
+	public void drawPlayer() {
+	
+	}
 
+
+	//separate function for bug
+	public void drawBug(){
+	square(random (0, 800),random (0, 800),50);
+	}
+
+
+	//void draw 
 	public void draw() {
-	rect(playerX, playerY, 90, 90); 
-
+	rect(playerX, playerY, 90, 90);
 
 	stroke(1, 0, 255);
 	circle(500, 450 , 50) ; 
 
+	if ((frameCount%60 == 0 )) {
+	drawBug();
+	}
 
 	}
 }
